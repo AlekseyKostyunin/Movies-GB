@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Movies-GB</string>
+    <string name="stars">stars</string>
+    <string name="item_favourite">Избранное</string>
+    <string name="title_main">Main</string>
+    <string name="title_movie">Фильмы</string>
+    <string name="title_favourites">Любимые</string>
+    <string name="title_details">Подробно</string>
+</resources>
