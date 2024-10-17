@@ -8,13 +8,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.alekseykostyunin.movies_gb.R
 import com.alekseykostyunin.movies_gb.databinding.TrailerItemBinding
-import com.alekseykostyunin.movies_gb.domain.Trailer
+import com.alekseykostyunin.domain.Trailer
 
 class TrailersAdapter(context: Context) : RecyclerView.Adapter<TrailersAdapter.TrailersViewHolder>(){
 
      var onTrailerClickListener : OnTrailerClickListener? = null
 
-     var trailers: List<Trailer> = listOf()
+     var trailers: List<com.alekseykostyunin.domain.Trailer> = listOf()
         set(value) {
             field = value
             notifyDataSetChanged()
@@ -52,6 +52,6 @@ class TrailersAdapter(context: Context) : RecyclerView.Adapter<TrailersAdapter.T
     }
 
     interface OnTrailerClickListener{
-        fun onTrailerClick(trailer: Trailer)
+        fun onTrailerClick(trailer: com.alekseykostyunin.domain.Trailer)
     }
 }

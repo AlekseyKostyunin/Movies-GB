@@ -10,14 +10,14 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.alekseykostyunin.movies_gb.R
 import com.alekseykostyunin.movies_gb.databinding.MovieItemBinding
-import com.alekseykostyunin.movies_gb.domain.Movie
+import com.alekseykostyunin.domain.Movie
 import com.bumptech.glide.Glide
 
 class FavouriteMoviesAdapter(private val context: Context) : RecyclerView.Adapter<FavouriteMoviesAdapter.MovieViewHolder>() {
 
     var onMovieClickListener: OnMovieClickListener? = null
 
-    var movies: List<Movie> = listOf()
+    var movies: List<com.alekseykostyunin.domain.Movie> = listOf()
         set(value) {
             field = value
             notifyDataSetChanged()
@@ -81,7 +81,7 @@ class FavouriteMoviesAdapter(private val context: Context) : RecyclerView.Adapte
     }
 
     interface OnMovieClickListener {
-        fun onMovieClick(movie: Movie)
+        fun onMovieClick(movie: com.alekseykostyunin.domain.Movie)
     }
 }
 

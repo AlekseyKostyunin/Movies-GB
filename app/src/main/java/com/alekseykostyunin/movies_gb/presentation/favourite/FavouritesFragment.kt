@@ -11,7 +11,6 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.alekseykostyunin.movies_gb.R
 import com.alekseykostyunin.movies_gb.databinding.FragmentFavouriteListBinding
-import com.alekseykostyunin.movies_gb.domain.Movie
 
 class FavouritesFragment : Fragment() {
 
@@ -37,7 +36,7 @@ class FavouritesFragment : Fragment() {
         viewModel.getMovies().observe(viewLifecycleOwner) { moviesAdapter.movies = it }
 
         moviesAdapter.onMovieClickListener = object : FavouriteMoviesAdapter.OnMovieClickListener {
-            override fun onMovieClick(movie: Movie) {
+            override fun onMovieClick(movie: com.alekseykostyunin.domain.Movie) {
                 requireActivity().findNavController(R.id.nav_host_activity_main)
                     .navigate(
                         resId = R.id.action_main_to_details,

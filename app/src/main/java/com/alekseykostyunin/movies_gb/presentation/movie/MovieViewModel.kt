@@ -5,8 +5,7 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.alekseykostyunin.movies_gb.data.ApiFactory
-import com.alekseykostyunin.movies_gb.domain.Movie
+import com.alekseykostyunin.domain.Movie
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
@@ -34,7 +33,7 @@ class MovieViewModel(application: Application) : AndroidViewModel(application) {
         if((loading != null) && loading){
             return
         }
-        val disposable = ApiFactory.apiService.loadMovies()
+        val disposable = com.alekseykostyunin.data.ApiFactory.apiService.loadMovies()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .doOnSubscribe { isLoading.value = true }

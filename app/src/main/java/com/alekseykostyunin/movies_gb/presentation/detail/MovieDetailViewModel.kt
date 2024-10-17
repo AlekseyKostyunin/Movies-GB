@@ -5,11 +5,6 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.alekseykostyunin.movies_gb.data.ApiFactory
-import com.alekseykostyunin.movies_gb.data.MovieDataBase
-import com.alekseykostyunin.movies_gb.domain.Movie
-import com.alekseykostyunin.movies_gb.domain.Review
-import com.alekseykostyunin.movies_gb.domain.Trailer
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
@@ -21,24 +16,24 @@ class MovieDetailViewModel(application: Application) : AndroidViewModel(applicat
     }
 
     private var compositeDisposable = CompositeDisposable()
-    private var trailers = MutableLiveData<List<Trailer>>()
-    private var reviews = MutableLiveData<List<Review>>()
-    private var movieDao = MovieDataBase.getInstance(application).movieDao()
+    private var trailers = MutableLiveData<List<com.alekseykostyunin.domain.Trailer>>()
+    private var reviews = MutableLiveData<List<com.alekseykostyunin.domain.Review>>()
+    private var movieDao = com.alekseykostyunin.data.MovieDataBase.getInstance(application).movieDao()
 
-    fun getFavouriteMovie(id: Int): LiveData<Movie> {
+    fun getFavouriteMovie(id: Int): LiveData<com.alekseykostyunin.domain.Movie> {
         return movieDao.getFavouriteMovie(id)
     }
 
-    fun getTrailers(): LiveData<List<Trailer>> {
+    fun getTrailers(): LiveData<List<com.alekseykostyunin.domain.Trailer>> {
         return trailers
     }
 
-    fun getReviews(): LiveData<List<Review>> {
+    fun getReviews(): LiveData<List<com.alekseykostyunin.domain.Review>> {
         return reviews
     }
 
     fun loadReviews(id: Int) {
-        val disposable = ApiFactory.apiService.loadReviews(id)
+        val disposable = com.alekseykostyunin.data.ApiFactory.apiService.loadReviews(id)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .map { it.reviews }
@@ -47,7 +42,7 @@ class MovieDetailViewModel(application: Application) : AndroidViewModel(applicat
         compositeDisposable.add(disposable)
     }
 
-    fun insertMovie(movie: Movie) {
+    fun insertMovie(movie: com.alekseykostyunin.domain.Movie) {
         val disposable = movieDao.insertMovie(movie)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -64,7 +59,7 @@ class MovieDetailViewModel(application: Application) : AndroidViewModel(applicat
     }
 
     fun loadTrailers(id: Int) {
-        val disposable = ApiFactory.apiService.loadTrailers(id)
+        val disposable = com.alekseykostyunin.data.ApiFactory.apiService.loadTrailers(id)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .map { it.videosList[0].trailersList.trailers }

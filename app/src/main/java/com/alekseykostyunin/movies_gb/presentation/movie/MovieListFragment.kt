@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import com.alekseykostyunin.movies_gb.domain.Movie
 import com.alekseykostyunin.movies_gb.presentation.favourite.FavouriteMoviesViewModel
 import com.alekseykostyunin.movies_gb.R
 import com.alekseykostyunin.movies_gb.databinding.FragmentMovieListBinding
@@ -58,7 +57,7 @@ class MovieListFragment : Fragment() {
         }
 
         moviesAdapter.onMovieClickListener = object : MoviesAdapter.OnMovieClickListener {
-            override fun onMovieClick(movie: Movie) {
+            override fun onMovieClick(movie: com.alekseykostyunin.domain.Movie) {
                 requireActivity().findNavController(R.id.nav_host_activity_main)
                     .navigate(
                         resId = R.id.action_main_to_details,

@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.alekseykostyunin.movies_gb.domain.Movie
 import com.alekseykostyunin.movies_gb.R
 import com.alekseykostyunin.movies_gb.databinding.MovieItemBinding
 import com.bumptech.glide.Glide
@@ -19,13 +18,13 @@ class MoviesAdapter(
 
     var onMovieClickListener: OnMovieClickListener? = null
 
-    var movies: List<Movie> = listOf()
+    var movies: List<com.alekseykostyunin.domain.Movie> = listOf()
         set(value) {
             field = value
             notifyDataSetChanged()
         }
 
-    var favoriteMovies: List<Movie> = listOf()
+    var favoriteMovies: List<com.alekseykostyunin.domain.Movie> = listOf()
         set(value) {
             field = value
             notifyDataSetChanged()
@@ -93,7 +92,7 @@ class MoviesAdapter(
     }
 
     interface OnMovieClickListener {
-        fun onMovieClick(movie: Movie)
+        fun onMovieClick(movie: com.alekseykostyunin.domain.Movie)
     }
 }
 

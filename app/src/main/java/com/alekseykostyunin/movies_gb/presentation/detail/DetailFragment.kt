@@ -11,9 +11,8 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.alekseykostyunin.domain.Movie
 import com.alekseykostyunin.movies_gb.databinding.FragmentMovieDetailBinding
-import com.alekseykostyunin.movies_gb.domain.Movie
-import com.alekseykostyunin.movies_gb.domain.Trailer
 import com.bumptech.glide.Glide
 
 class DetailFragment : Fragment() {
@@ -59,7 +58,7 @@ class DetailFragment : Fragment() {
             trailersAdapter.trailers = it
         }
         trailersAdapter.onTrailerClickListener = object : TrailersAdapter.OnTrailerClickListener {
-            override fun onTrailerClick(trailer: Trailer) {
+            override fun onTrailerClick(trailer: com.alekseykostyunin.domain.Trailer) {
                 val intent = Intent(Intent.ACTION_VIEW)
                 intent.data = Uri.parse(trailer.url)
                 startActivity(intent)

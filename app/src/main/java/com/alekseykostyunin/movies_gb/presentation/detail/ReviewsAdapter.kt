@@ -8,11 +8,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.alekseykostyunin.movies_gb.R
 import com.alekseykostyunin.movies_gb.databinding.ReviewItemBinding
-import com.alekseykostyunin.movies_gb.domain.Review
+import com.alekseykostyunin.domain.Review
 
 class ReviewsAdapter(context: Context) : RecyclerView.Adapter<ReviewsAdapter.ReviewsViewHolder>(){
 
-    var reviews: List<Review> = listOf()
+    var reviews: List<com.alekseykostyunin.domain.Review> = listOf()
         set(value) {
             field = value
             notifyDataSetChanged()
