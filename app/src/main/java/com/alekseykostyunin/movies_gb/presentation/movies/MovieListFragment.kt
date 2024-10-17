@@ -30,22 +30,22 @@ class MovieListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val favouriteMoviesViewModel: FavouriteMoviesViewModel by viewModels()
-        val moviesAdapter = MoviesAdapter(requireContext())
-        binding.recyclerView.adapter = moviesAdapter
-        binding.recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
 
+        val favouriteMoviesViewModel: FavouriteMoviesViewModel by viewModels()
         val viewModel: MovieViewModel by viewModels()
+        val moviesAdapter = MoviesAdapter(requireContext())
 
         viewModel.getMovies().observe(viewLifecycleOwner) { movies ->
-            moviesAdapter.movies = movies
-            favouriteMoviesViewModel.getMovies().observe(viewLifecycleOwner) {
-                moviesAdapter.favoriteMovies = it
+            favouriteMoviesViewModel.getMovies().observe(viewLifecycleOwner) { favouriteMovies ->
+                moviesAdapter.favoriteMovies = favouriteMovies
+                moviesAdapter.movies = movies
             }
         }
 
-        viewModel.loadMovies()
+        binding.recyclerView.adapter = moviesAdapter
+        binding.recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
 
+        viewModel.loadMovies()
         viewModel.getIsLoading().observe(viewLifecycleOwner) {
             if (it) {
                 binding.progress.visibility = View.VISIBLE
