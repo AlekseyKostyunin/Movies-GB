@@ -1,4 +1,4 @@
-package com.alekseykostyunin.movies_gb.data
+package com.alekseykostyunin.movies_gb.data.favourite
 
 import android.app.Application
 import androidx.room.Database
@@ -14,7 +14,7 @@ abstract class MovieDataBase : RoomDatabase() {
         private const val DB_NAME = "movie.db"
         private val LOCK = Any()
 
-        fun getInstance(application: Application): MovieDataBase{
+        fun getInstance(application: Application): MovieDataBase {
             synchronized(LOCK){
                 db?.let {
                     return it

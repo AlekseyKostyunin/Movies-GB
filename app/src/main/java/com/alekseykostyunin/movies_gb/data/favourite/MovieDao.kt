@@ -1,4 +1,4 @@
-package com.alekseykostyunin.movies_gb.data
+package com.alekseykostyunin.movies_gb.data.favourite
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao

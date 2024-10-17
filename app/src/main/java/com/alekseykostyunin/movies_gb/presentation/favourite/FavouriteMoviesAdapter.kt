@@ -1,4 +1,4 @@
-package com.alekseykostyunin.movies_gb.presentation.movies
+package com.alekseykostyunin.movies_gb.presentation.favourite
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -13,19 +13,11 @@ import com.alekseykostyunin.movies_gb.databinding.MovieItemBinding
 import com.alekseykostyunin.movies_gb.domain.movies.Movie
 import com.bumptech.glide.Glide
 
-class MoviesAdapter(
-    private val context: Context
-) : RecyclerView.Adapter<MoviesAdapter.MovieViewHolder>() {
+class FavouriteMoviesAdapter(private val context: Context) : RecyclerView.Adapter<FavouriteMoviesAdapter.MovieViewHolder>() {
 
     var onMovieClickListener: OnMovieClickListener? = null
 
     var movies: List<Movie> = listOf()
-        set(value) {
-            field = value
-            notifyDataSetChanged()
-        }
-
-    var favoriteMovies: List<Movie> = listOf()
         set(value) {
             field = value
             notifyDataSetChanged()
@@ -78,12 +70,8 @@ class MoviesAdapter(
 
         holder.textViewRating.text = rating.toString().substring(0, 3)
         holder.textViewRating.setBackgroundResource(backgroundId)
+        holder.imageViewStar.setImageDrawable(starOn)
 
-        if (movie in favoriteMovies) {
-            holder.imageViewStar.setImageDrawable(starOn)
-        } else {
-            holder.imageViewStar.setImageDrawable(starOff)
-        }
 
         holder.itemView.setOnClickListener {
             if (onMovieClickListener != null) {

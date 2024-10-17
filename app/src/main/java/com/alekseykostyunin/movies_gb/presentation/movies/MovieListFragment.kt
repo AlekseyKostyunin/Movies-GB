@@ -6,12 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.alekseykostyunin.movies_gb.R
 import com.alekseykostyunin.movies_gb.databinding.FragmentMovieListBinding
 import com.alekseykostyunin.movies_gb.domain.movies.Movie
+import com.alekseykostyunin.movies_gb.presentation.favourite.FavouriteMoviesViewModel
 
 class MovieListFragment : Fragment() {
 
@@ -29,15 +30,22 @@ class MovieListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val moviesAdapter = MoviesAdapter()
+        val favouriteMoviesViewModel: FavouriteMoviesViewModel by viewModels()
+        val moviesAdapter = MoviesAdapter(requireContext())
         binding.recyclerView.adapter = moviesAdapter
         binding.recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
-        val viewModel = ViewModelProvider(this)[MovieViewModel::class.java]
+
+        val viewModel: MovieViewModel by viewModels()
+
         viewModel.getMovies().observe(viewLifecycleOwner) { movies ->
             moviesAdapter.movies = movies
+            favouriteMoviesViewModel.getMovies().observe(viewLifecycleOwner) {
+                moviesAdapter.favoriteMovies = it
+            }
         }
+
         viewModel.loadMovies()
+
         viewModel.getIsLoading().observe(viewLifecycleOwner) {
             if (it) {
                 binding.progress.visibility = View.VISIBLE

@@ -5,8 +5,8 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.alekseykostyunin.movies_gb.data.ApiFactory
-import com.alekseykostyunin.movies_gb.data.MovieDataBase
+import com.alekseykostyunin.movies_gb.data.movies.ApiFactory
+import com.alekseykostyunin.movies_gb.data.favourite.MovieDataBase
 import com.alekseykostyunin.movies_gb.domain.details.Review
 import com.alekseykostyunin.movies_gb.domain.details.Trailer
 import com.alekseykostyunin.movies_gb.domain.movies.Movie

@@ -6,13 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.alekseykostyunin.movies_gb.R
 import com.alekseykostyunin.movies_gb.databinding.FragmentFavouriteListBinding
 import com.alekseykostyunin.movies_gb.domain.movies.Movie
-import com.alekseykostyunin.movies_gb.presentation.movies.MoviesAdapter
 
 class FavouritesFragment : Fragment() {
 
@@ -30,14 +29,14 @@ class FavouritesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val moviesAdapter = MoviesAdapter()
+        val viewModel: FavouriteMoviesViewModel by viewModels()
+
+        val moviesAdapter = FavouriteMoviesAdapter(requireContext())
         binding.recyclerView.adapter = moviesAdapter
         binding.recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
-        val viewModel = ViewModelProvider(this)[FavouriteMoviesViewModel::class.java]
-        viewModel.getMovies().observe(viewLifecycleOwner) {
-            moviesAdapter.movies = it
-        }
-        moviesAdapter.onMovieClickListener = object : MoviesAdapter.OnMovieClickListener {
+        viewModel.getMovies().observe(viewLifecycleOwner) { moviesAdapter.movies = it }
+
+        moviesAdapter.onMovieClickListener = object : FavouriteMoviesAdapter.OnMovieClickListener {
             override fun onMovieClick(movie: Movie) {
                 requireActivity().findNavController(R.id.nav_host_activity_main)
                     .navigate(

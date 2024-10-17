@@ -56,6 +56,7 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.swiperefreshlayout)
+    implementation(libs.androidx.ui.desktop)
     val room_version = "2.6.0"
     implementation("androidx.room:room-runtime:$room_version")
     implementation(kotlin("stdlib-jdk8"))

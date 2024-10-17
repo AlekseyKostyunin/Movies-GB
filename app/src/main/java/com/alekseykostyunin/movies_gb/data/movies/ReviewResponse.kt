@@ -1,4 +1,4 @@
-package com.alekseykostyunin.movies_gb.data
+package com.alekseykostyunin.movies_gb.data.movies
 
 import com.alekseykostyunin.movies_gb.domain.details.Review
 import com.google.gson.annotations.Expose
