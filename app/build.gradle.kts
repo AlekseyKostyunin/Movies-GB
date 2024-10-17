@@ -49,6 +49,9 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:adapter-rxjava3:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation(libs.androidx.junit.ktx)
+    implementation(libs.androidx.runner)
+    implementation(libs.androidx.navigation.testing)
 
     val room_version = "2.6.0"
     implementation("androidx.room:room-runtime:$room_version")
@@ -67,6 +70,7 @@ dependencies {
     implementation(libs.androidx.swiperefreshlayout)
     implementation(libs.androidx.ui.desktop)
     testImplementation(libs.junit)
+    testImplementation("org.mockito:mockito-core:3.11.2")
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
