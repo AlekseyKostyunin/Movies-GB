@@ -11,7 +11,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.alekseykostyunin.movies_gb.R
 import com.alekseykostyunin.movies_gb.databinding.FragmentFavouriteListBinding
-import com.alekseykostyunin.movies_gb.domain.movies.Movie
+import com.alekseykostyunin.movies_gb.domain.Movie
 
 class FavouritesFragment : Fragment() {
 

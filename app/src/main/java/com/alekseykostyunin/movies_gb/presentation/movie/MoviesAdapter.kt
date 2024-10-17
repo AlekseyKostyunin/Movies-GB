@@ -1,4 +1,4 @@
-package com.alekseykostyunin.movies_gb.presentation.movies
+package com.alekseykostyunin.movies_gb.presentation.movie
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -8,9 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.alekseykostyunin.movies_gb.domain.Movie
 import com.alekseykostyunin.movies_gb.R
 import com.alekseykostyunin.movies_gb.databinding.MovieItemBinding
-import com.alekseykostyunin.movies_gb.domain.movies.Movie
 import com.bumptech.glide.Glide
 
 class MoviesAdapter(

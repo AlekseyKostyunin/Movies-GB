@@ -1,4 +1,4 @@
-package com.alekseykostyunin.movies_gb.domain.movies
+package com.alekseykostyunin.movies_gb.domain
 
 import androidx.room.Embedded
 import androidx.room.Entity

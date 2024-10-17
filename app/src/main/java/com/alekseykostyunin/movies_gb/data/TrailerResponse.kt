@@ -1,6 +1,6 @@
-package com.alekseykostyunin.movies_gb.data.movies
+package com.alekseykostyunin.movies_gb.data
 
-import com.alekseykostyunin.movies_gb.domain.details.VideosList
+import com.alekseykostyunin.movies_gb.domain.VideosList
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 

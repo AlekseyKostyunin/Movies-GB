@@ -1,4 +1,4 @@
-package com.alekseykostyunin.movies_gb.presentation.movies
+package com.alekseykostyunin.movies_gb.presentation.movie
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,10 +9,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.alekseykostyunin.movies_gb.domain.Movie
+import com.alekseykostyunin.movies_gb.presentation.favourite.FavouriteMoviesViewModel
 import com.alekseykostyunin.movies_gb.R
 import com.alekseykostyunin.movies_gb.databinding.FragmentMovieListBinding
-import com.alekseykostyunin.movies_gb.domain.movies.Movie
-import com.alekseykostyunin.movies_gb.presentation.favourite.FavouriteMoviesViewModel
 
 class MovieListFragment : Fragment() {
 

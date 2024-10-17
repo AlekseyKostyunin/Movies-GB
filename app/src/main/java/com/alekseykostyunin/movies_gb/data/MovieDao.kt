@@ -1,11 +1,11 @@
-package com.alekseykostyunin.movies_gb.data.favourite
+package com.alekseykostyunin.movies_gb.data
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.alekseykostyunin.movies_gb.domain.movies.Movie
+import com.alekseykostyunin.movies_gb.domain.Movie
 import io.reactivex.rxjava3.core.Completable
 
 @Dao

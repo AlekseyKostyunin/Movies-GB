@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.alekseykostyunin.movies_gb.R
 import com.alekseykostyunin.movies_gb.databinding.TrailerItemBinding
-import com.alekseykostyunin.movies_gb.domain.details.Trailer
+import com.alekseykostyunin.movies_gb.domain.Trailer
 
 class TrailersAdapter(context: Context) : RecyclerView.Adapter<TrailersAdapter.TrailersViewHolder>(){
 

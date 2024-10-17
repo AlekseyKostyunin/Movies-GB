@@ -1,4 +1,4 @@
-package com.alekseykostyunin.movies_gb.domain.movies
+package com.alekseykostyunin.movies_gb.domain
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName

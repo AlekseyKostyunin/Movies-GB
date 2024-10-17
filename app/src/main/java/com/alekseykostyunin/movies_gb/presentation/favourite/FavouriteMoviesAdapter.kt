@@ -10,7 +10,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.alekseykostyunin.movies_gb.R
 import com.alekseykostyunin.movies_gb.databinding.MovieItemBinding
-import com.alekseykostyunin.movies_gb.domain.movies.Movie
+import com.alekseykostyunin.movies_gb.domain.Movie
 import com.bumptech.glide.Glide
 
 class FavouriteMoviesAdapter(private val context: Context) : RecyclerView.Adapter<FavouriteMoviesAdapter.MovieViewHolder>() {

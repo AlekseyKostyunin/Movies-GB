@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.alekseykostyunin.movies_gb.R
 import com.alekseykostyunin.movies_gb.databinding.ReviewItemBinding
-import com.alekseykostyunin.movies_gb.domain.details.Review
+import com.alekseykostyunin.movies_gb.domain.Review
 
 class ReviewsAdapter(context: Context) : RecyclerView.Adapter<ReviewsAdapter.ReviewsViewHolder>(){
 

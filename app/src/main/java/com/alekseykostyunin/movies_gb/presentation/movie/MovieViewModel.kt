@@ -1,12 +1,12 @@
-package com.alekseykostyunin.movies_gb.presentation.movies
+package com.alekseykostyunin.movies_gb.presentation.movie
 
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.alekseykostyunin.movies_gb.data.movies.ApiFactory
-import com.alekseykostyunin.movies_gb.domain.movies.Movie
+import com.alekseykostyunin.movies_gb.data.ApiFactory
+import com.alekseykostyunin.movies_gb.domain.Movie
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers

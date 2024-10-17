@@ -1,4 +1,4 @@
-package com.alekseykostyunin.movies_gb.data.movies
+package com.alekseykostyunin.movies_gb.data
 
 import io.reactivex.rxjava3.core.Single
 import retrofit2.http.GET

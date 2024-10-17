@@ -1,4 +1,4 @@
-package com.alekseykostyunin.movies_gb.data.movies
+package com.alekseykostyunin.movies_gb.data
 
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory

@@ -12,8 +12,8 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.alekseykostyunin.movies_gb.databinding.FragmentMovieDetailBinding
-import com.alekseykostyunin.movies_gb.domain.details.Trailer
-import com.alekseykostyunin.movies_gb.domain.movies.Movie
+import com.alekseykostyunin.movies_gb.domain.Movie
+import com.alekseykostyunin.movies_gb.domain.Trailer
 import com.bumptech.glide.Glide
 
 class DetailFragment : Fragment() {
