@@ -3,10 +3,15 @@ package com.alekseykostyunin.movies_gb.presentation.favourite
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import com.alekseykostyunin.movies_gb.data.favourite.MovieDao
 import com.alekseykostyunin.movies_gb.data.favourite.MovieDataBase
 import com.alekseykostyunin.movies_gb.domain.movies.Movie
+import javax.inject.Inject
 
-class FavouriteMoviesViewModel(application: Application) : AndroidViewModel(application) {
+class FavouriteMoviesViewModel(
+    application: Application,
+
+) : AndroidViewModel(application) {
 
     private val movieDao = MovieDataBase.getInstance(application).movieDao()
 
